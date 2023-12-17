@@ -23,14 +23,22 @@ public class Calculator {
     }
 
     public int operation() {
+        /*This variable newNumber is esscencial because is like the second inserted number,
+        with it I can select the last number when pressing "=" button
+        */
         int newNumber = Integer.parseInt(firstNumber);
         numberList.add(newNumber);
 
+        /*If I press "=" and there's no number yet it will show me a 0*/
+        
         if (numberList.isEmpty() || numberSign.isEmpty()) {
             return 0;
         }
         result = numberList.get(0);
 
+        /*Here below I run through the sign array and then the numberList and depending what sign is in the moment,
+          I sum them or multiply etc.  
+        */
         for (int i = 0; i < numberSign.size(); i++) {
             String sign = numberSign.get(i);
 
@@ -55,7 +63,7 @@ public class Calculator {
         }
         return result;
     }
-
+/*As the name says, I reset all the values of my variables once finished, to start over again*/
     public void clearValues() {
         numberList.clear();
         numberSign.clear();
